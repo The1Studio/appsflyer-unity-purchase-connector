@@ -10,14 +10,14 @@ jobs:
     runs-on: [self-hosted, linux, x64, arc, the1studio, org]
     steps:
       - name: checkout repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         
       - name: Name of the branch
         run: | 
           echo "PLUGIN_VERSION=${{  github.ref_name }}" >> $GITHUB_ENV
         
       - name: setup python
-        uses: actions/setup-python@v2
+        uses: actions/setup-python@v5
         with:
           python-version: '3.7.8'
       - name: install python packages
